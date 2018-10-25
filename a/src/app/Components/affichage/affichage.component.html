@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <br>
+        <a class="btn btn-info btn-lg" (click)="logout()">
+            <span class="glyphicon glyphicon-log-out"></span> Se Deconnecter
+        </a>
+        <br>
+        <br>
+        <h1 style="text-align: center">Bienvenue {{username}}</h1>
+        <br>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th># </th>
+                    <th>Nom </th>
+                    <th>Race</th>
+                    <th>Famille</th>
+                    <th>Nourriture</th>
+                    <th>Age</th>
+                    <th></th>
+                    <th></th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let p of  users">
+                    <ng-container *ngIf="p.username==username">
+                        <td>{{p._id }}</td>
+                        <td>{{p.nom }}</td>
+                        <td>{{p.race }}</td>
+                        <td>{{ p.famille }}</td>
+                        <td>{{ p.nourriture }}</td>
+                        <td>{{ p.age }}</td>
+
+                        <td>
+                            <a class="btn btn-success" href="Amis/{{p._id}}">Mes Amis &nbsp;
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                            </a>
+
+
+                        </td>
+
+                        <td>
+                            <a class="btn btn-warning" href="edit/{{p._id}}/{{p.username}}">Modifier mes informations
+                                <span class="	glyphicon glyphicon-pencil"></span>
+                            </a>
+
+                        </td>
+                    </ng-container>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

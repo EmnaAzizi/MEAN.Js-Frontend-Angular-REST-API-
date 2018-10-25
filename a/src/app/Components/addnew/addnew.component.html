@@ -1,0 +1,57 @@
+<h1 style="text-align: center">{{title}}</h1>
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+
+    <form (submit)="addUser(username,password,race,famille,nourriture,age,nom)" class="well ">
+
+      <div class="form-group">
+        <label>Username:</label>
+        <input type="text" class="form-control" placeholder="Username" [(ngModel)]="username" name="username">
+      </div>
+
+
+
+      <div class="form-group">
+        <label>Nom:</label>
+        <input type="text" class="form-control" placeholder="Nom" [(ngModel)]="nom" name="nom">
+      </div>
+
+      <div class="form-group">
+        <label>Password:</label>
+        <input type="password" class="form-control" placeholder="Password" [(ngModel)]="password" name="password">
+      </div>
+
+
+
+      <div class="form-group">
+        <label>Race:</label>
+        <input type="text" class="form-control" placeholder="Race" [(ngModel)]="race" name="race">
+      </div>
+
+      <div class="form-group">
+        <label>Famille:</label>
+        <input type="text" class="form-control" placeholder="Famille" [(ngModel)]="famille" name="famille">
+      </div>
+
+      <div class="form-group">
+        <label>Nourriture:</label>
+        <input type="text" class="form-control" placeholder="Nourriture" [(ngModel)]="nourriture" name="nourriture">
+      </div>
+
+      <div class="form-group">
+        <label>Age:</label>
+        <input type="text" class="form-control" placeholder="Age" [(ngModel)]="age" name="age">
+      </div>
+
+
+
+
+      <button type="submit" class="btn btn-primary">Enregistrer</button>
+
+    </form>
+
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<h1 style="text-align: center"> Modifier mes informations </h1>
+<br>
+<br>
+<br>
+
+<div class="container">
+
+  <div class="row">
+    <a type="button" class="btn btn-info" href="/users/{{username}}"> <span class="glyphicon glyphicon-chevron-left"></span>
+      &nbsp;Retour</a>
+    <br>
+    <br> <br>
+
+    <form (submit)="editUser(race,age,nourriture,famille,nom)" class="well ">
+      <div class="form-group">
+        <label>Nom:</label>
+        <input type="text" class="form-control" placeholder="{{user.nom}}" [(ngModel)]="nom" name="nom">
+      </div>
+      <div class="form-group">
+        <label>Age:</label>
+        <input type="text" class="form-control" placeholder="{{user.age}}" [(ngModel)]="age" name="age">
+      </div>
+
+
+
+      <div class="form-group">
+        <label>Race:</label>
+        <input type="text" class="form-control" placeholder="{{user.race}}" [(ngModel)]="race" name="race">
+      </div>
+      <div class="form-group">
+        <label>Famille:</label>
+        <input type="text" class="form-control" placeholder="{{user.famille}}" [(ngModel)]="famille" name="famille">
+      </div>
+      <div class="form-group">
+        <label>Nourriture:</label>
+        <input type="text" class="form-control" placeholder="{{user.nourriture}}" [(ngModel)]="nourriture" name="nourriture">
+      </div>
+
+
+      <br>
+      <br>
+
+      <div style="text-align: center">
+        <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
+      </div>
+
+    </form>
+  </div>
+</div>

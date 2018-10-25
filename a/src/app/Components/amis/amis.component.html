@@ -1,0 +1,66 @@
+<h1 style="text-align: center">Ma liste d'amis </h1>
+
+<br>
+<br>
+<br>
+
+<div class="container">
+  <div class="row">
+    &nbsp;
+    <a type="button" class="btn btn-info" href="/users/{{user.username}}"> <span class="glyphicon glyphicon-chevron-left"></span>
+      &nbsp;Retour</a>
+    <div style="text-align: right">
+
+      <input class="" type="search" placeholder="Recherche un ami" [(ngModel)]='listFilter'>
+      <span class="glyphicon glyphicon-search"></span>
+    </div>
+    <hr>
+    <a href="/ajout/{{id}}" class="btn btn-info">Créer un nouvel ami
+      <span class="glyphicon glyphicon-plus"></span>
+    </a>
+
+
+    <br>
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
+
+          <th>Ma liste d'amis </th>
+          <th> </th>
+
+
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let p of Friend | amisFilter:listFilter">
+          <td> {{p.username}}</td>
+          <td>
+            <a class="btn btn-danger" (click)="deleteUserfriend(p)">Supprimer de ma liste d'amis
+              <span class="glyphicon glyphicon-remove"></span>
+            </a>
+          </td>
+        </tr>
+
+
+        <tr *ngFor="let k of notFriend | amisFilter:listFilter">
+          <td>
+            {{k.username}}
+          </td>
+          <td>
+            <a class="btn btn-success" (click)="addUserfriend(k)">Ajouter à ma liste d'amis
+              <span class="glyphicon glyphicon-plus"></span>
+            </a>
+          </td>
+
+        </tr>
+
+      </tbody>
+    </table>
+    <br>
+    <br>
+
+    <br>
+
+    <hr>
